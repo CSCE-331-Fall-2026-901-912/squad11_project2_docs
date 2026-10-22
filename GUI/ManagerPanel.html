@@ -204,7 +204,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JTabbedPane.html" title="class or interface in javax.swing" class="external-link">JTabbedPane</a></code></div>
 <div class="col-second even-row-color"><code><a href="#tabbedPane" class="member-name-link">tabbedPane</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Holds every management and report tab.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-javax.swing.JComponent">Fields inherited from class&nbsp;javax.swing.<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JComponent.html" title="class or interface in javax.swing" class="external-link">JComponent</a></h3>
@@ -510,6 +512,8 @@ loadScripts(document, 'script');</script>
 <h3>tabbedPane</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JTabbedPane.html" title="class or interface in javax.swing" class="external-link">JTabbedPane</a></span>&nbsp;<span class="element-name">tabbedPane</span></div>
+<div class="block">Holds every management and report tab. Tabs are looked up by title in
+ <a href="#refreshCurrentTab()"><code>refreshCurrentTab()</code></a>, so a renamed tab must be renamed there too.</div>
 </div>
 </section>
 </li>

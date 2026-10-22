@@ -290,7 +290,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Builds the built-in menu used until the real menu has been loaded.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.HourlyGraphCanvas.html#displayDate" class="member-name-link">displayDate</a> - Variable in class GUI.<a href="GUI/ManagerPanel.HourlyGraphCanvas.html" title="class in GUI">ManagerPanel.HourlyGraphCanvas</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The day being charted, shown in the chart title; blank until data is set.</div>
+</dd>
 <dt><a href="GUI/CashierPanel.html#drinkGrid" class="member-name-link">drinkGrid</a> - Variable in class GUI.<a href="GUI/CashierPanel.html" title="class in GUI">CashierPanel</a></dt>
 <dd>
 <div class="block">The grid of drink buttons, rebuilt whenever the menu is (re)loaded.</div>
@@ -352,7 +354,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Hides the options pop-up and its dimming scrim.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.HourlyGraphCanvas.html#hourlyData" class="member-name-link">hourlyData</a> - Variable in class GUI.<a href="GUI/ManagerPanel.HourlyGraphCanvas.html" title="class in GUI">ManagerPanel.HourlyGraphCanvas</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Order counts for each hour of the day, index 0 = midnight to 1 AM; all zero until data is set.</div>
+</dd>
 <dt><a href="GUI/ManagerPanel.HourlyGraphCanvas.html#%3Cinit%3E()" class="member-name-link">HourlyGraphCanvas()</a> - Constructor for class GUI.<a href="GUI/ManagerPanel.HourlyGraphCanvas.html" title="class in GUI">ManagerPanel.HourlyGraphCanvas</a></dt>
 <dd>
 <div class="block">Creates an empty white chart with a default size.</div>
@@ -390,7 +394,9 @@ loadScripts(document, 'script');</script>
 <div class="block">The drink's menu_item_id.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.NamedId.html#id" class="member-name-link">id</a> - Variable in class GUI.<a href="GUI/ManagerPanel.NamedId.html" title="class in GUI">ManagerPanel.NamedId</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The row's primary key, used in the SQL run for whatever the manager picked.</div>
+</dd>
 <dt><a href="GUI/CashierPanel.html#insertOrder(java.sql.Connection,java.util.List)" class="member-name-link">insertOrder(Connection, List&lt;CashierPanel.CartItem&gt;)</a> - Static method in class GUI.<a href="GUI/CashierPanel.html" title="class in GUI">CashierPanel</a></dt>
 <dd>
 <div class="block">Inserts the given drinks into drink_orders under the next free Order-ID,
@@ -543,7 +549,9 @@ loadScripts(document, 'script');</script>
 <div class="block">The name shown on the drink's button.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.NamedId.html#name" class="member-name-link">name</a> - Variable in class GUI.<a href="GUI/ManagerPanel.NamedId.html" title="class in GUI">ManagerPanel.NamedId</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The row's display name; never null.</div>
+</dd>
 <dt><a href="GUI/ManagerPanel.NamedId.html#%3Cinit%3E(int,java.lang.String)" class="member-name-link">NamedId(int, String)</a> - Constructor for class GUI.<a href="GUI/ManagerPanel.NamedId.html" title="class in GUI">ManagerPanel.NamedId</a></dt>
 <dd>
 <div class="block">Creates a pair.</div>
@@ -751,7 +759,9 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
 <dt><a href="GUI/ManagerPanel.html#tabbedPane" class="member-name-link">tabbedPane</a> - Variable in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Holds every management and report tab.</div>
+</dd>
 <dt><a href="GUI/dbSetup.html#TABLE_NAME" class="member-name-link">TABLE_NAME</a> - Static variable in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
 <dd>
 <div class="block">Name of the menu table.</div>
@@ -786,7 +796,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Topping names in topping_id order (index + 1 = topping_id, so "None" is 11).</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.NamedId.html#toString()" class="member-name-link">toString()</a> - Method in class GUI.<a href="GUI/ManagerPanel.NamedId.html" title="class in GUI">ManagerPanel.NamedId</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Formats the pair as it appears in the drop-down.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:U">U</h2>
 <dl class="index">
