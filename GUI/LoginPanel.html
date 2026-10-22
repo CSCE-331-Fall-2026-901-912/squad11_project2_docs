@@ -156,10 +156,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JButton.html" title="class or interface in javax.swing" class="external-link">JButton</a></code></div>
 <div class="col-second even-row-color"><code><a href="#loginButton" class="member-name-link">loginButton</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Submits the PIN; disabled together with <a href="#pinField"><code>pinField</code></a> while a lookup is running.</div>
+</div>
 <div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPasswordField.html" title="class or interface in javax.swing" class="external-link">JPasswordField</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#pinField" class="member-name-link">pinField</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Masked input where the employee types their numeric PIN; cleared after every attempt.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-javax.swing.JComponent">Fields inherited from class&nbsp;javax.swing.<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JComponent.html" title="class or interface in javax.swing" class="external-link">JComponent</a></h3>
@@ -238,6 +242,7 @@ loadScripts(document, 'script');</script>
 <h3>pinField</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPasswordField.html" title="class or interface in javax.swing" class="external-link">JPasswordField</a></span>&nbsp;<span class="element-name">pinField</span></div>
+<div class="block">Masked input where the employee types their numeric PIN; cleared after every attempt.</div>
 </div>
 </section>
 </li>
@@ -246,6 +251,7 @@ loadScripts(document, 'script');</script>
 <h3>loginButton</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JButton.html" title="class or interface in javax.swing" class="external-link">JButton</a></span>&nbsp;<span class="element-name">loginButton</span></div>
+<div class="block">Submits the PIN; disabled together with <a href="#pinField"><code>pinField</code></a> while a lookup is running.</div>
 </div>
 </section>
 </li>
@@ -284,7 +290,15 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">authenticate</span><wbr><span class="parameters">(<a href="MainFrame.html" title="class in GUI">MainFrame</a>&nbsp;frame)</span></div>
 <div class="block">Validates the employee PIN entered by the user and redirects the application to the
- appropriate screen based on the employee's position in the database.</div>
+ appropriate screen based on the employee's position in the database.
+
+ The PIN must be non-empty and digits only; otherwise a warning is shown and
+ nothing is queried. The employees lookup runs on a background SwingWorker so the
+ window stays responsive, and the form is locked until it finishes. A "cashier"
+ position opens the cashier screen and "manager" opens the manager screen (case
+ and surrounding spaces are ignored). An unknown PIN, a PIN shared by more than one
+ employee, any other position, or a database failure is reported in a dialog
+ instead. The typed PIN is wiped from memory as soon as it has been read.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>frame</code> - the main application window used to switch to the authenticated screen</dd>

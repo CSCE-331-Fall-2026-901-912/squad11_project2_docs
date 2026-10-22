@@ -165,10 +165,12 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>loginButton</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JButton.html" title="class or interface in javax.swing" class="external-link">JButton</a> loginButton</pre>
+<div class="block">Submits the PIN; disabled together with <a href="GUI/LoginPanel.html#pinField"><code>LoginPanel.pinField</code></a> while a lookup is running.</div>
 </li>
 <li class="block-list">
 <h5>pinField</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPasswordField.html" title="class or interface in javax.swing" class="external-link">JPasswordField</a> pinField</pre>
+<div class="block">Masked input where the employee types their numeric PIN; cleared after every attempt.</div>
 </li>
 </ul>
 </section>
@@ -188,10 +190,12 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>cards</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/java/awt/CardLayout.html" title="class or interface in java.awt" class="external-link">CardLayout</a> cards</pre>
+<div class="block">Layout that stacks the screens and shows the one picked by <a href="GUI/MainFrame.html#showScreen(java.lang.String)"><code>MainFrame.showScreen(String)</code></a>.</div>
 </li>
 <li class="block-list">
 <h5>container</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a> container</pre>
+<div class="block">Panel holding every screen, each registered under its "LOGIN", "CASHIER" or "MANAGER" name.</div>
 </li>
 </ul>
 </section>
