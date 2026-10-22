@@ -98,8 +98,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">dbSetup</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Database Setup Class
- dbSetup stores constants used to connect to the PSQL database</div>
+<div class="block">Database connection settings for the POS system.
+
+ Holds the address and login for the team's PostgreSQL database and hands out
+ connections to it. The password is never stored in the code; it is read once,
+ when this class loads, from the untracked .env file in the directory the app
+ is run from (or from the DB_PASSWORD environment variable).</div>
 <dl class="notes">
 <dt>Author:</dt>
 <dd>Cody Cheng, Caleb Xu</dd>
@@ -119,16 +123,25 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DB_PASSWORD" class="member-name-link">DB_PASSWORD</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Password for <a href="#DB_USER"><code>DB_USER</code></a>, loaded from .env (or the DB_PASSWORD
+ environment variable) at startup; empty if neither is set.</div>
+</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#DB_URL" class="member-name-link">DB_URL</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">JDBC URL of the team's PostgreSQL database on the TAMU CSCE server.</div>
+</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DB_USER" class="member-name-link">DB_USER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Database role every screen logs in as.</div>
+</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#TABLE_NAME" class="member-name-link">TABLE_NAME</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Name of the menu table.</div>
+</div>
 </div>
 </section>
 </li>
@@ -159,12 +172,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/Connection.html" title="class or interface in java.sql" class="external-link">Connection</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getConnection()" class="member-name-link">getConnection</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns a new connection to the database</div>
+<div class="block">Opens a new connection to the database.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadPassword()" class="member-name-link">loadPassword</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Load the database connection password from the (untracked) .env file</div>
+<div class="block">Loads the database password from the (untracked) .env file in the working
+ directory.</div>
 </div>
 </div>
 </div>
@@ -188,6 +202,7 @@ loadScripts(document, 'script');</script>
 <h3>DB_URL</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DB_URL</span></div>
+<div class="block">JDBC URL of the team's PostgreSQL database on the TAMU CSCE server.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -204,6 +219,7 @@ loadScripts(document, 'script');</script>
 <h3>DB_USER</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DB_USER</span></div>
+<div class="block">Database role every screen logs in as.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -220,6 +236,8 @@ loadScripts(document, 'script');</script>
 <h3>DB_PASSWORD</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DB_PASSWORD</span></div>
+<div class="block">Password for <a href="#DB_USER"><code>DB_USER</code></a>, loaded from .env (or the DB_PASSWORD
+ environment variable) at startup; empty if neither is set.</div>
 </div>
 </section>
 </li>
@@ -228,6 +246,8 @@ loadScripts(document, 'script');</script>
 <h3>TABLE_NAME</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">TABLE_NAME</span></div>
+<div class="block">Name of the menu table. Not currently read anywhere; the panels write
+ their table names directly in their SQL.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -269,12 +289,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/Connection.html" title="class or interface in java.sql" class="external-link">Connection</a></span>&nbsp;<span class="element-name">getConnection</span>()
                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
-<div class="block">Returns a new connection to the database</div>
+<div class="block">Opens a new connection to the database. The caller is responsible for
+ closing it, ideally with try-with-resources.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Connection to the database</dd>
+<dd>a new, open connection to the database</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></code> - if unable to connect</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></code> - if no password was found or the server refuses the connection</dd>
 </dl>
 </div>
 </section>
@@ -284,10 +305,13 @@ loadScripts(document, 'script');</script>
 <h3>loadPassword</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">loadPassword</span>()</div>
-<div class="block">Load the database connection password from the (untracked) .env file</div>
+<div class="block">Loads the database password from the (untracked) .env file in the working
+ directory. Falls back to the DB_PASSWORD environment variable, then to an
+ empty string, so a missing password is reported by <a href="#getConnection()"><code>getConnection()</code></a>
+ instead of crashing on startup.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the database password</dd>
+<dd>the database password, or "" if none was found</dd>
 </dl>
 </div>
 </section>

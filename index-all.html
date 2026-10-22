@@ -243,15 +243,21 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
 <dt><a href="GUI/dbSetup.html#DB_PASSWORD" class="member-name-link">DB_PASSWORD</a> - Static variable in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Password for <a href="GUI/dbSetup.html#DB_USER"><code>dbSetup.DB_USER</code></a>, loaded from .env (or the DB_PASSWORD
+ environment variable) at startup; empty if neither is set.</div>
+</dd>
 <dt><a href="GUI/dbSetup.html#DB_URL" class="member-name-link">DB_URL</a> - Static variable in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">JDBC URL of the team's PostgreSQL database on the TAMU CSCE server.</div>
+</dd>
 <dt><a href="GUI/dbSetup.html#DB_USER" class="member-name-link">DB_USER</a> - Static variable in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Database role every screen logs in as.</div>
+</dd>
 <dt><a href="GUI/dbSetup.html" class="type-name-link" title="class in GUI">dbSetup</a> - Class in <a href="GUI/package-summary.html">GUI</a></dt>
 <dd>
-<div class="block">Database Setup Class
- dbSetup stores constants used to connect to the PSQL database</div>
+<div class="block">Database connection settings for the POS system.</div>
 </dd>
 <dt><a href="GUI/dbSetup.html#%3Cinit%3E()" class="member-name-link">dbSetup()</a> - Constructor for class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
 <dd>&nbsp;</dd>
@@ -322,7 +328,7 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="GUI/dbSetup.html#getConnection()" class="member-name-link">getConnection()</a> - Static method in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
 <dd>
-<div class="block">Returns a new connection to the database</div>
+<div class="block">Opens a new connection to the database.</div>
 </dd>
 <dt><a href="GUI/CashierPanel.html#GRID_COLUMNS" class="member-name-link">GRID_COLUMNS</a> - Static variable in class GUI.<a href="GUI/CashierPanel.html" title="class in GUI">CashierPanel</a></dt>
 <dd>
@@ -402,7 +408,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="GUI/dbSetup.html#loadPassword()" class="member-name-link">loadPassword()</a> - Static method in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
 <dd>
-<div class="block">Load the database connection password from the (untracked) .env file</div>
+<div class="block">Loads the database password from the (untracked) .env file in the working
+ directory.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#loadPopularDrinksData(javax.swing.JPanel,java.lang.String,java.lang.String)" class="member-name-link">loadPopularDrinksData(JPanel, String, String)</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>
@@ -727,7 +734,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="GUI/ManagerPanel.html#tabbedPane" class="member-name-link">tabbedPane</a> - Variable in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="GUI/dbSetup.html#TABLE_NAME" class="member-name-link">TABLE_NAME</a> - Static variable in class GUI.<a href="GUI/dbSetup.html" title="class in GUI">dbSetup</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Name of the menu table.</div>
+</dd>
 <dt><a href="GUI/CashierPanel.html#TEXT_COLOR" class="member-name-link">TEXT_COLOR</a> - Static variable in class GUI.<a href="GUI/CashierPanel.html" title="class in GUI">CashierPanel</a></dt>
 <dd>
 <div class="block">Shared dark text colour for labels and unselected buttons.</div>
