@@ -286,7 +286,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventoryUsagePanel()" class="member-name-link">createInventoryUsagePanel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Report for Inventory Usage over a given date window.</div>
+<div class="block">Builds the Inventory Used sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows how much of each ingredient those orders used.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMenuItemsPanel()" class="member-name-link">createMenuItemsPanel</a>()</code></div>
@@ -304,7 +306,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPriceVolumePanel()" class="member-name-link">createPriceVolumePanel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Report for Price Volume over a given date window.</div>
+<div class="block">Builds the Price Volume sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows each drink's order count and sales total.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createRecentOrdersPanel()" class="member-name-link">createRecentOrdersPanel</a>()</code></div>
@@ -364,7 +368,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadInventoryUsageData(javax.swing.JPanel,java.lang.String,java.lang.String)" class="member-name-link">loadInventoryUsageData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;startDate,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;endDate)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Totals how much of each ingredient was used by the drinks ordered in the
+ window, using each drink's recipe in menu_item_ingredients, and shows the
+ result with its units, most used first.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ManagerPanel.NamedId.html" title="class in GUI">ManagerPanel.NamedId</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadNamedIds(java.lang.String)" class="member-name-link">loadNamedIds</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sql)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -416,7 +424,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#populateTableContainer(javax.swing.JPanel,java.sql.PreparedStatement)" class="member-name-link">populateTableContainer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;pstmt)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs a report query and adds its results to the container as a read-only,
+ sortable table.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshCurrentTab()" class="member-name-link">refreshCurrentTab</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -564,7 +575,10 @@ loadScripts(document, 'script');</script>
 <h3>createInventoryUsagePanel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></span>&nbsp;<span class="element-name">createInventoryUsagePanel</span>()</div>
-<div class="block">Report for Inventory Usage over a given date window.</div>
+<div class="block">Builds the Inventory Used sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows how much of each ingredient those orders used. Loads today's
+ report on creation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the sub-tab's panel</dd>
@@ -579,6 +593,16 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadInventoryUsageData</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;startDate,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;endDate)</span></div>
+<div class="block">Totals how much of each ingredient was used by the drinks ordered in the
+ window, using each drink's recipe in menu_item_ingredients, and shows the
+ result with its units, most used first. Shows an error label instead if the
+ query fails (e.g. a badly formatted date).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>container</code> - the panel to replace with the report table</dd>
+<dd><code>startDate</code> - the first day of the window, as YYYY-MM-DD</dd>
+<dd><code>endDate</code> - the day after the last day of the window, as YYYY-MM-DD</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -587,7 +611,10 @@ loadScripts(document, 'script');</script>
 <h3>createPriceVolumePanel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></span>&nbsp;<span class="element-name">createPriceVolumePanel</span>()</div>
-<div class="block">Report for Price Volume over a given date window.</div>
+<div class="block">Builds the Price Volume sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows each drink's order count and sales total. Loads today's report
+ on creation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the sub-tab's panel</dd>
@@ -620,9 +647,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">populateTableContainer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;pstmt)</span>
                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
+<div class="block">Runs a report query and adds its results to the container as a read-only,
+ sortable table. Column headers are taken from the query's column names, so
+ aliases in the SELECT become the headers the manager sees.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>container</code> - the panel to add the scrollable table to</dd>
+<dd><code>pstmt</code> - the prepared query, with all parameters already set</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></code> - if the query fails; the caller shows the error</dd>
 </dl>
 </div>
 </section>

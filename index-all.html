@@ -193,7 +193,9 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#createInventoryUsagePanel()" class="member-name-link">createInventoryUsagePanel()</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>
-<div class="block">Report for Inventory Usage over a given date window.</div>
+<div class="block">Builds the Inventory Used sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows how much of each ingredient those orders used.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#createMenuItemsPanel()" class="member-name-link">createMenuItemsPanel()</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>
@@ -208,7 +210,9 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#createPriceVolumePanel()" class="member-name-link">createPriceVolumePanel()</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>
-<div class="block">Report for Price Volume over a given date window.</div>
+<div class="block">Builds the Price Volume sub-tab: start and end date fields (defaulting to
+ today and tomorrow, which covers just today's orders) and a Generate Report button
+ that shows each drink's order count and sales total.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#createRecentOrdersPanel()" class="member-name-link">createRecentOrdersPanel()</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
 <dd>
@@ -400,7 +404,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Loads and scales the image for a drink from the images folder.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#loadInventoryUsageData(javax.swing.JPanel,java.lang.String,java.lang.String)" class="member-name-link">loadInventoryUsageData(JPanel, String, String)</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Totals how much of each ingredient was used by the drinks ordered in the
+ window, using each drink's recipe in menu_item_ingredients, and shows the
+ result with its units, most used first.</div>
+</dd>
 <dt><a href="GUI/CashierPanel.html#loadMenu()" class="member-name-link">loadMenu()</a> - Method in class GUI.<a href="GUI/CashierPanel.html" title="class in GUI">CashierPanel</a></dt>
 <dd>
 <div class="block">Loads every drink from the menu_items table (id, name and price) and shows it
@@ -594,7 +602,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Masked input where the employee types their numeric PIN; cleared after every attempt.</div>
 </dd>
 <dt><a href="GUI/ManagerPanel.html#populateTableContainer(javax.swing.JPanel,java.sql.PreparedStatement)" class="member-name-link">populateTableContainer(JPanel, PreparedStatement)</a> - Method in class GUI.<a href="GUI/ManagerPanel.html" title="class in GUI">ManagerPanel</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Runs a report query and adds its results to the container as a read-only,
+ sortable table.</div>
+</dd>
 <dt><a href="GUI/CashierPanel.CartItem.html#price" class="member-name-link">price</a> - Variable in class GUI.<a href="GUI/CashierPanel.CartItem.html" title="class in GUI">CashierPanel.CartItem</a></dt>
 <dd>
 <div class="block">The price of this drink in dollars.</div>
